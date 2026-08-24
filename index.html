@@ -53,7 +53,12 @@
         .chk-item input[type="checkbox"] { width: 20px; height: 20px; accent-color: var(--brand-magenta); margin-top: 2px; flex-shrink: 0; cursor: pointer; }
         .chk-item label { font-size: 14.5px; color: #222; cursor: pointer; flex-grow: 1; line-height: 1.4; }
 
-        .tally-box { background: linear-gradient(135deg, var(--brand-primary) 0%, var(--brand-magenta) 100%); color: white; padding: 16px; border-radius: 12px; text-align: center; margin-top: 15px; font-weight: bold; font-size: 15px; display: none; }
+        .tally-box { background: #ffffff; border: 2px solid var(--brand-magenta); color: var(--text-dark); padding: 20px; border-radius: 16px; margin-top: 20px; display: none; box-shadow: 0 4px 15px rgba(246, 0, 148, 0.1); }
+        .tally-header { font-size: 18px; font-weight: bold; color: var(--brand-magenta); margin-bottom: 10px; text-align: center; border-bottom: 1px solid var(--brand-pink); padding-bottom: 8px; }
+        .tally-list { list-style: none; padding: 0; margin: 10px 0; font-size: 14px; }
+        .tally-list li { display: flex; justify-content: space-between; padding: 6px 0; border-bottom: 1px dashed #eee; }
+        .tally-list li strong { color: var(--brand-primary); }
+        .tally-total { font-size: 16px; font-weight: bold; text-align: center; margin-top: 12px; padding: 8px; background: var(--brand-cream); border-radius: 8px; color: var(--brand-magenta); }
 
         .journal-table { width: 100%; border-collapse: collapse; margin: 15px 0; font-size: 13px; }
         .journal-table th { background: var(--brand-primary); color: white; padding: 8px; text-align: left; }
@@ -145,31 +150,31 @@
 
         <h3>L'Attacco</h3>
         <div class="checklist-group">
-            <div class="chk-item"><input type="checkbox" id="p1" onchange="updateSummary()"><label for="p1">Fa fatica ad attaccarsi o scivola via continuamente?</label></div>
-            <div class="chk-item"><input type="checkbox" id="p2" onchange="updateSummary()"><label for="p2">L'attacco risulta superficiale o non "a pesciolino" (bocca chiusa o stretta)?</label></div>
-            <div class="chk-item"><input type="checkbox" id="p3" onchange="updateSummary()"><label for="p3">Al seno ho dolore durante o dopo l'attacco?</label></div>
-            <div class="chk-item"><input type="checkbox" id="p4" onchange="updateSummary()"><label for="p4">Il capezzolo esce deformato, schiacciato o molto sbiancato?</label></div>
+            <div class="chk-item"><input type="checkbox" id="p1" data-cat="poppata" onchange="updateSummary()"><label for="p1">Fa fatica ad attaccarsi o scivola via continuamente?</label></div>
+            <div class="chk-item"><input type="checkbox" id="p2" data-cat="poppata" onchange="updateSummary()"><label for="p2">L'attacco risulta superficiale o non "a pesciolino" (bocca chiusa o stretta)?</label></div>
+            <div class="chk-item"><input type="checkbox" id="p3" data-cat="poppata" onchange="updateSummary()"><label for="p3">Al seno ho dolore durante o dopo l'attacco?</label></div>
+            <div class="chk-item"><input type="checkbox" id="p4" data-cat="poppata" onchange="updateSummary()"><label for="p4">Il capezzolo esce deformato, schiacciato o molto sbiancato?</label></div>
         </div>
 
         <h3>Durante la Suzione</h3>
         <div class="checklist-group">
-            <div class="chk-item"><input type="checkbox" id="p5" onchange="updateSummary()"><label for="p5">Si stacca frequentemente dal seno o dal biberon?</label></div>
-            <div class="chk-item"><input type="checkbox" id="p6" onchange="updateSummary()"><label for="p6">Sento schiocchi durante la suzione?</label></div>
-            <div class="chk-item"><input type="checkbox" id="p7" onchange="updateSummary()"><label for="p7">Sembra perdere spesso il sigillo o la presa?</label></div>
-            <div class="chk-item"><input type="checkbox" id="p8" onchange="updateSummary()"><label for="p8">Si agita o si irrigidisce durante la poppata al seno o al biberon?</label></div>
-            <div class="chk-item"><input type="checkbox" id="p9" onchange="updateSummary()"><label for="p9">Sembra fare molta fatica a mangiare o si stanca molto rapidamente?</label></div>
-            <div class="chk-item"><input type="checkbox" id="p10" onchange="updateSummary()"><label for="p10">Le poppate sono quasi sempre molto lunghe (> 45-60 minuti)?</label></div>
-            <div class="chk-item"><input type="checkbox" id="p10b" onchange="updateSummary()"><label for="p10b">Le poppate sono molto brevi e frammentate?</label></div>
-            <div class="chk-item"><input type="checkbox" id="p11" onchange="updateSummary()"><label for="p11">Al biberon tossisce, si strozza o fatica a gestire il flusso?</label></div>
+            <div class="chk-item"><input type="checkbox" id="p5" data-cat="poppata" onchange="updateSummary()"><label for="p5">Si stacca frequentemente dal seno o dal biberon?</label></div>
+            <div class="chk-item"><input type="checkbox" id="p6" data-cat="poppata" onchange="updateSummary()"><label for="p6">Sento schiocchi durante la suzione?</label></div>
+            <div class="chk-item"><input type="checkbox" id="p7" data-cat="poppata" onchange="updateSummary()"><label for="p7">Sembra perdere spesso il sigillo o la presa?</label></div>
+            <div class="chk-item"><input type="checkbox" id="p8" data-cat="poppata" onchange="updateSummary()"><label for="p8">Si agita o si irrigidisce durante la poppata al seno o al biberon?</label></div>
+            <div class="chk-item"><input type="checkbox" id="p9" data-cat="poppata" onchange="updateSummary()"><label for="p9">Sembra fare molta fatica a mangiare o si stanca molto rapidamente?</label></div>
+            <div class="chk-item"><input type="checkbox" id="p10" data-cat="poppata" onchange="updateSummary()"><label for="p10">Le poppate sono quasi sempre molto lunghe (> 45-60 minuti)?</label></div>
+            <div class="chk-item"><input type="checkbox" id="p10b" data-cat="poppata" onchange="updateSummary()"><label for="p10b">Le poppate sono molto brevi e frammentate?</label></div>
+            <div class="chk-item"><input type="checkbox" id="p11" data-cat="poppata" onchange="updateSummary()"><label for="p11">Al biberon tossisce, si strozza o fatica a gestire il flusso?</label></div>
         </div>
 
         <h3>3. Cosa succede dopo aver mangiato?</h3>
         <div class="checklist-group">
-            <div class="chk-item"><input type="checkbox" id="p12" onchange="updateSummary()"><label for="p12">Piange spesso subito dopo aver mangiato?</label></div>
-            <div class="chk-item"><input type="checkbox" id="p13" onchange="updateSummary()"><label for="p13">Si agita, si irrigidisce o si inarca frequentemente?</label></div>
-            <div class="chk-item"><input type="checkbox" id="p14" onchange="updateSummary()"><label for="p14">Cerca immediatamente di mangiare di nuovo ma sembra raramente soddisfatto/a?</label></div>
-            <div class="chk-item"><input type="checkbox" id="p15" onchange="updateSummary()"><label for="p15">Si calma soltanto al seno o solo in posizione verticale/a contatto?</label></div>
-            <div class="chk-item"><input type="checkbox" id="p16" onchange="updateSummary()"><label for="p16">Rigurgita frequentemente e dopo sembra stare male?</label></div>
+            <div class="chk-item"><input type="checkbox" id="p12" data-cat="dopo_pasto" onchange="updateSummary()"><label for="p12">Piange spesso subito dopo aver mangiato?</label></div>
+            <div class="chk-item"><input type="checkbox" id="p13" data-cat="dopo_pasto" onchange="updateSummary()"><label for="p13">Si agita, si irrigidisce o si inarca frequentemente?</label></div>
+            <div class="chk-item"><input type="checkbox" id="p14" data-cat="dopo_pasto" onchange="updateSummary()"><label for="p14">Cerca immediatamente di mangiare di nuovo ma sembra raramente soddisfatto/a?</label></div>
+            <div class="chk-item"><input type="checkbox" id="p15" data-cat="dopo_pasto" onchange="updateSummary()"><label for="p15">Si calma soltanto al seno o solo in posizione verticale/a contatto?</label></div>
+            <div class="chk-item"><input type="checkbox" id="p16" data-cat="dopo_pasto" onchange="updateSummary()"><label for="p16">Rigurgita frequentemente e dopo sembra stare male?</label></div>
         </div>
 
         <div class="box-highlight">
@@ -183,28 +188,28 @@
         <h2>4. Il Pianto: quando succede?</h2>
         <p>Non guardare soltanto quanto piange il bambino/a. Guarda <em>quando</em>.</p>
         <div class="checklist-group">
-            <div class="chk-item"><input type="checkbox" id="c1" onchange="updateSummary()"><label for="c1">Piange soprattutto la sera o in orario tardo pomeridiano?</label></div>
-            <div class="chk-item"><input type="checkbox" id="c2" onchange="updateSummary()"><label for="c2">Il pianto compare durante la poppata o subito dopo?</label></div>
-            <div class="chk-item"><input type="checkbox" id="c3" onchange="updateSummary()"><label for="c3">È molto difficile da consolare e ha pochi momenti di vera tranquillità?</label></div>
-            <div class="chk-item"><input type="checkbox" id="c4" onchange="updateSummary()"><label for="c4">Si calma prevalentemente con il contatto, il movimento o al seno?</label></div>
-            <div class="chk-item"><input type="checkbox" id="c5" onchange="updateSummary()"><label for="c5">Le gambe vengono tirate alla pancia e la schiena si inarca?</label></div>
+            <div class="chk-item"><input type="checkbox" id="c1" data-cat="pianto" onchange="updateSummary()"><label for="c1">Piange soprattutto la sera o in orario tardo pomeridiano?</label></div>
+            <div class="chk-item"><input type="checkbox" id="c2" data-cat="pianto" onchange="updateSummary()"><label for="c2">Il pianto compare durante la poppata o subito dopo?</label></div>
+            <div class="chk-item"><input type="checkbox" id="c3" data-cat="pianto" onchange="updateSummary()"><label for="c3">È molto difficile da consolare e ha pochi momenti di vera tranquillità?</label></div>
+            <div class="chk-item"><input type="checkbox" id="c4" data-cat="pianto" onchange="updateSummary()"><label for="c4">Si calma prevalentemente con il contatto, il movimento o al seno?</label></div>
+            <div class="chk-item"><input type="checkbox" id="c5" data-cat="pianto" onchange="updateSummary()"><label for="c5">Le gambe vengono tirate alla pancia e la schiena si inarca?</label></div>
         </div>
 
         <h2>5. Intestino, Aria e Feci</h2>
         <p>Quando un bambino/a ha molta aria è facile pensare che il problema sia solo la pancia. Ma l'aria è un'informazione, non necessariamente la spiegazione.</p>
         <div class="checklist-group">
-            <div class="chk-item"><input type="checkbox" id="i1" onchange="updateSummary()"><label for="i1">Sembra ingoiare molta aria e l'intestino appare spesso teso e disteso?</label></div>
-            <div class="chk-item"><input type="checkbox" id="i2" onchange="updateSummary()"><label for="i2">Le feci sono cambiate in modo persistente (liquide, verdi schiumose, con muco)?</label></div>
-            <div class="chk-item"><input type="checkbox" id="i3" onchange="updateSummary()"><label for="i3">Hai visto tracce ematiche nelle feci?</label></div>
-            <div class="chk-item"><input type="checkbox" id="i4" onchange="updateSummary()"><label for="i4">Sente sollievo temporaneo dopo l'emissione di gas o l'evacuazione?</label></div>
+            <div class="chk-item"><input type="checkbox" id="i1" data-cat="pancia" onchange="updateSummary()"><label for="i1">Sembra ingoiare molta aria e l'intestino appare spesso teso e disteso?</label></div>
+            <div class="chk-item"><input type="checkbox" id="i2" data-cat="pancia" onchange="updateSummary()"><label for="i2">Le feci sono cambiate in modo persistente (liquide, verdi schiumose, con muco)?</label></div>
+            <div class="chk-item"><input type="checkbox" id="i3" data-cat="pancia" onchange="updateSummary()"><label for="i3">Hai visto tracce ematiche nelle feci?</label></div>
+            <div class="chk-item"><input type="checkbox" id="i4" data-cat="pancia" onchange="updateSummary()"><label for="i4">Sente sollievo temporaneo dopo l'emissione di gas o l'evacuazione?</label></div>
         </div>
 
         <h2>6. Crescita e Alimentazione</h2>
         <div class="checklist-group">
-            <div class="chk-item"><input type="checkbox" id="cr1" onchange="updateSummary()"><label for="cr1">Ho dubbi sulla crescita o sulla quantità di latte assunta dal bambino/a?</label></div>
-            <div class="chk-item"><input type="checkbox" id="cr2" onchange="updateSummary()"><label for="cr2">Bagna almeno 5-6 pannolini di pipì nelle 24 ore?</label></div>
-            <div class="chk-item"><input type="checkbox" id="cr2b" onchange="updateSummary()"><label for="cr2b">Sporca almeno 1-3 pannolini nelle 24 ore?</label></div>
-            <div class="chk-item"><input type="checkbox" id="cr3" onchange="updateSummary()"><label for="cr3">Sto pensando di interrompere l'allattamento perché la situazione è difficile?</label></div>
+            <div class="chk-item"><input type="checkbox" id="cr1" data-cat="crescita" onchange="updateSummary()"><label for="cr1">Ho dubbi sulla crescita o sulla quantità di latte assunta dal bambino/a?</label></div>
+            <div class="chk-item"><input type="checkbox" id="cr2" data-cat="crescita" onchange="updateSummary()"><label for="cr2">Bagna almeno 5-6 pannolini di pipì nelle 24 ore?</label></div>
+            <div class="chk-item"><input type="checkbox" id="cr2b" data-cat="crescita" onchange="updateSummary()"><label for="cr2b">Sporca almeno 1-3 pannolini nelle 24 ore?</label></div>
+            <div class="chk-item"><input type="checkbox" id="cr3" data-cat="crescita" onchange="updateSummary()"><label for="cr3">Sto pensando di interrompere l'allattamento perché la situazione è difficile?</label></div>
         </div>
 
         <div class="box-highlight">
@@ -220,11 +225,11 @@
         
         <h3>Checklist Funzionale Frenulo</h3>
         <div class="checklist-group">
-            <div class="chk-item"><input type="checkbox" id="f1" onchange="updateSummary()"><label for="f1">Fa fatica a mantenere il seno o la tettarella in bocca?</label></div>
-            <div class="chk-item"><input type="checkbox" id="f2" onchange="updateSummary()"><label for="f2">Perde frequentemente il sigillo e si sentono schiocchi?</label></div>
-            <div class="chk-item"><input type="checkbox" id="f3" onchange="updateSummary()"><label for="f3">La suzione sembra poco efficace e il bambino/a si stanca rapidamente o si addormenta subito?</label></div>
-            <div class="chk-item"><input type="checkbox" id="f4" onchange="updateSummary()"><label for="f4">L'attacco rimane difficile e la mamma ha dolore persistente o capezzolo deformato?</label></div>
-            <div class="chk-item"><input type="checkbox" id="f5" onchange="updateSummary()"><label for="f5">Ti è stata consigliata una valutazione della lingua o del frenulo?</label></div>
+            <div class="chk-item"><input type="checkbox" id="f1" data-cat="frenulo" onchange="updateSummary()"><label for="f1">Fa fatica a mantenere il seno o la tettarella in bocca?</label></div>
+            <div class="chk-item"><input type="checkbox" id="f2" data-cat="frenulo" onchange="updateSummary()"><label for="f2">Perde frequentemente il sigillo e si sentono schiocchi?</label></div>
+            <div class="chk-item"><input type="checkbox" id="f3" data-cat="frenulo" onchange="updateSummary()"><label for="f3">La suzione sembra poco efficace e il bambino/a si stanca rapidamente o si addormenta subito?</label></div>
+            <div class="chk-item"><input type="checkbox" id="f4" data-cat="frenulo" onchange="updateSummary()"><label for="f4">L'attacco rimane difficile e la mamma ha dolore persistente o capezzolo deformato?</label></div>
+            <div class="chk-item"><input type="checkbox" id="f5" data-cat="frenulo" onchange="updateSummary()"><label for="f5">Ti è stata consigliata una valutazione della lingua o del frenulo?</label></div>
         </div>
 
         <h2>Altre Cause da Esplorare</h2>
@@ -236,7 +241,16 @@
     <!-- SEZIONE 7 & 8: GOCCINE & REFLUSSO -->
     <div class="card" id="goccine">
         <h2>10. E le Goccine?</h2>
+        
+        <div class="box-safety" style="margin: 10px 0 15px; padding: 12px; border-left-width: 4px;">
+            <p style="margin: 0; font-size: 13.5px; text-align: left; color: #b00050; font-weight: bold;">
+                ⚠️ CONSULTO MEDICO FONDAMENTALE:<br>
+                Prima di somministrare qualsiasi tipo di goccina, integratore, rimedio o probiotico al tuo bambino/a, è sempre indispensabile consultare preventivamente il pediatra di riferimento.
+            </p>
+        </div>
+
         <p>Quando il bambino/a piange, è del tutto naturale voler trovare un rimedio immediato. Prodotti come il <strong>simeticone</strong> vengono spesso proposti quasi in automatico: la letteratura scientifica evidenzia che il simeticone agisce favorendo l'aggregazione delle bolle d'aria nell'intestino per facilitarne l'espulsione, ma ha un'incidenza limitata sulla riduzione complessiva del pianto poiché interviene solo sul sintomo e non sulla causa primaria che genera l'ingestione d'aria (come un difetto d'attacco o di gestione del flusso).</p>
+
         <p>Per quanto riguarda i <strong>probiotici</strong> (ad esempio ceppi specifici studiati nella ricerca scientifica come <em>Lactobacillus reuteri</em>), l'eventuale supporto va sempre valutato e concordato con il medico/pediatra. La ricerca dimostra che l'efficacia dipende fortemente dalla scelta del ceppo adeguato e dalle caratteristiche individuali del lattante. Ricorda: l'obiettivo non è accumulare tentativi di prodotti diversi, ma comprendere cosa si sta cercando di migliorare e valutare la situazione nel suo insieme.</p>
 
         <h2>8. Rigurgito: non significa automaticamente Reflusso</h2>
@@ -246,13 +260,36 @@
     <!-- SEZIONE 11: OSTEOPATIA -->
     <div class="card" id="osteopatia">
         <h2>11. E l'Osteopatia?</h2>
-        <p>L'osteopatia pediatrica può essere un valido aiuto di supporto per eliminare tensioni date sia da un attacco superficiale e una restrizione orale, o per le conseguenze di un parto operativo, o comunque per distendere le tensioni presenti nel corpo del bambino/a. Può essere un supporto molto valido da valutare nel caso in cui il tuo bimbo/a soffra di coliche o distress. Ovviamente è fondamentale lavorare in team (osteopata, pediatra, IBCLC) per valutare a fondo tutta la situazione.</p>
+        <p>Un'accurata valutazione e un trattamento osteopatico pediatrico rappresentano un <strong>supporto di straordinaria importanza</strong> per liberare il corpo del bambino/a dalle tensioni somatiche, muscolari e cranio-sacrali.</p>
+        
+        <p>Tensioni posturali o contratture possono originare sia da posizioni intrauterine, sia dalle conseguenze di un parto operativo (forcipe, ventosa, cesareo o fasi espulsive prolungate), sia essere la conseguenza diretta di un attacco superficiale e di una restrizione orale (frenulo restrittivo). Tali tensioni possono generare un marcato disagio corporeo, rendere la poppata faticosa e contribuire in modo significativo al quadro del distress o delle cosiddette "coliche".</p>
+        
+        <p>L'approccio osteopatico è quindi un tassello di fondamentale rilevanza da valutare nel percorso del tuo bimbo/a per distendere le tensioni e restituire comfort corporeo. Per garantire la massima efficacia e sicurezza, è indispensabile lavorare in un <strong>team multidisciplinare integrato (Osteopata pediatrico, Pediatra e IBCLC)</strong>, in modo da valutare l'intero quadro clinico e funzionale a 360°.</p>
     </div>
 
-    <!-- TALLY BOX / RIEPILOGO INTERATTIVO -->
+    <!-- TALLY BOX / RIEPILOGO INTERATTIVO DETTAGLIATO PER SEZIONE -->
     <div id="tally-summary" class="tally-box">
-        Hai selezionato <span id="checked-count">0</span> segnali.
-        <div id="tally-advice" style="font-weight: normal; font-size: 13.5px; margin-top: 6px;"></div>
+        <div class="tally-header">📊 Il Riepilogo delle tue osservazioni</div>
+        <ul class="tally-list">
+            <li id="row-poppata" style="display:none;"><span>Durante la poppata:</span> <strong id="count-poppata">0</strong></li>
+            <li id="row-dopo" style="display:none;"><span>Dopo il pasto:</span> <strong id="count-dopo">0</strong></li>
+            <li id="row-pianto" style="display:none;"><span>Pattern del pianto:</span> <strong id="count-pianto">0</strong></li>
+            <li id="row-pancia" style="display:none;"><span>Pancino & Feci:</span> <strong id="count-pancia">0</strong></li>
+            <li id="row-crescita" style="display:none;"><span>Crescita e Pannolini:</span> <strong id="count-crescita">0</strong></li>
+            <li id="row-frenulo" style="display:none;"><span>Bocca & Suzione (Frenulo):</span> <strong id="count-frenulo">0</strong></li>
+        </ul>
+        <div class="tally-total">
+            Totale segnali evidenziati: <span id="checked-count">0</span>
+        </div>
+        <div id="tally-advice" style="font-weight: normal; font-size: 13.5px; margin-top: 10px; text-align: center; color: #444;"></div>
+    </div>
+
+    <!-- SEZIONE CONCLUSIVA: UN PASSO ALLA VOLTA -->
+    <div class="card" style="background-color: var(--brand-cream); border: 2px solid var(--brand-pink);">
+        <h2>Un passo alla volta: come usare al meglio questa guida</h2>
+        <p>Questa checklist nasce per offrirti una mappa semplice e concreta: un modo chiaro per monitorare i segnali da tenere in considerazione ed essere consapevole di eventuali difficoltà.</p>
+        <p>Tuttavia, gli aspetti da valutare e le informazioni in gioco sono davvero tanti. Quando ci si trova nel mezzo di pianti prolungati, unire tutti i puntini da soli può diventare faticoso e schiacciante.</p>
+        <p><strong>Non devi fare tutto da sola.</strong> Rivolgetevi alla vostra IBCLC di fiducia per una consulenza approfondita: osservare l'alimentazione dal vivo e analizzare la vostra storia insieme è la strada più diretta per capire cosa stia davvero succedendo, fare chiarezza e ritrovare la serenità.</p>
     </div>
 
     <!-- SEZIONE 12: IBCLC -->
@@ -260,7 +297,7 @@
         <h2>12. COSA TI RACCONTA LA TUA CHECKLIST?</h2>
         <p>Se hai messo diverse spunte in una o più sezioni, potrebbe essere utile approfondire come sta funzionando l'alimentazione del tuo bambino/a (sia al seno che al biberon).</p>
         
-        <p>Una valutazione IBCLC permette di osservare ciò che una checklist non può vedere: come mangia realmente il bambino/a. Attacco, suzione, deglutizione, coordinazione, gestione del flusso e trasferimento di latte.</p>
+        <p>Una valutazione IBCLC permette di osservare ciò che una checklist non può vedere: come mangia réellement il bambino/a. Attacco, suzione, deglutizione, coordinazione, gestione del flusso e trasferimento di latte.</p>
 
         <div class="box-highlight" style="text-align: center; font-style: italic;">
             "Una consulenza IBCLC non inizia dalla bocca del bambino/a, inizia dalla vostra storia."
@@ -342,25 +379,64 @@
 
 <script>
     function updateSummary() {
+        const counts = {
+            poppata: 0,
+            dopo_pasto: 0,
+            pianto: 0,
+            pancia: 0,
+            crescita: 0,
+            frenulo: 0
+        };
+
+        let total = 0;
         const checkboxes = document.querySelectorAll('input[type="checkbox"]');
-        let count = 0;
-        checkboxes.forEach(chk => { if (chk.checked) count++; });
+
+        checkboxes.forEach(chk => {
+            if (chk.checked) {
+                total++;
+                const cat = chk.getAttribute('data-cat');
+                if (cat && counts.hasOwnProperty(cat)) {
+                    counts[cat]++;
+                }
+            }
+        });
 
         const tallyBox = document.getElementById('tally-summary');
-        const countSpan = document.getElementById('checked-count');
-        const adviceDiv = document.getElementById('tally-advice');
-
-        countSpan.textContent = count;
-
-        if (count > 0) {
+        
+        if (total > 0) {
             tallyBox.style.display = 'block';
-            if (count >= 5) {
-                adviceDiv.textContent = "Hai selezionato diverse spunte. Potrebbe essere un momento utile per osservare la poppata e l'alimentazione del tuo bambino/a insieme a un professionista.";
+            document.getElementById('checked-count').textContent = total;
+
+            // Aggiorna singole righe
+            updateCategoryRow('row-poppata', 'count-poppata', counts.poppata);
+            updateCategoryRow('row-dopo', 'count-dopo', counts.dopo_pasto);
+            updateCategoryRow('row-pianto', 'count-pianto', counts.pianto);
+            updateCategoryRow('row-pancia', 'count-pancia', counts.pancia);
+            updateCategoryRow('row-crescita', 'count-crescita', counts.crescita);
+            updateCategoryRow('row-frenulo', 'count-frenulo', counts.frenulo);
+
+            // Messaggio dinamico
+            const adviceDiv = document.getElementById('tally-advice');
+            if (counts.poppata > 1 || counts.frenulo > 1) {
+                adviceDiv.textContent = "Notiamo diversi segnali concentrati nell'area della poppata e della suzione: una valutazione dal vivo dell'alimentazione con una IBCLC potrebbe dare risposte molto chiare.";
+            } else if (counts.pancia > 1) {
+                adviceDiv.textContent = "Le tue spunte indicano affaticamento a livello digestivo/addominale: valutare insieme la gestione dell'aria durante il pasto e la risposta post-poppata può essere d'aiuto.";
             } else {
-                adviceDiv.textContent = "Continua a osservare i segnali nei prossimi giorni per individuare eventuali pattern ricorrenti.";
+                adviceDiv.textContent = "I segnali raccolti sono un ottimo punto di partenza per osservare i pattern nei prossimi giorni ed parlarne con il tuo professionista di riferimento.";
             }
         } else {
             tallyBox.style.display = 'none';
+        }
+    }
+
+    function updateCategoryRow(rowId, countId, value) {
+        const row = document.getElementById(rowId);
+        const countSpan = document.getElementById(countId);
+        if (value > 0) {
+            row.style.display = 'flex';
+            countSpan.textContent = value;
+        } else {
+            row.style.display = 'none';
         }
     }
 </script>
