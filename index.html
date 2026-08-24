@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IL MIO BAMBINO / LA MIA BAMBINA PIANGE TANTO. DA DOVE COMINCIO? — Annelisa Brunelli IBCLC</title>
+    <style>
+        :root {
+            --brand-primary: #f19821;
+            --brand-magenta: #f60094;
+            --brand-yellow: #ffb010;
+            --brand-pink: #f9b4c7;
+            --brand-cream: #feeaeb;
+            --bg-light: #fffcf9;
+            --text-dark: #2d2d2d;
+            --card-border: #f2e2d0;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background-color: var(--bg-light); color: var(--text-dark); line-height: 1.6; font-size: 16px; padding-bottom: 90px; }
+        .container { max-width: 720px; margin: 0 auto; padding: 15px; }
+
+        .brand-badge-header { text-align: center; padding: 20px 10px 10px; }
+        .brand-logo-text { font-family: 'Georgia', serif; font-size: 22px; font-weight: bold; letter-spacing: 2px; color: var(--brand-primary); text-transform: uppercase; margin-bottom: 4px; }
+        .brand-tagline { font-size: 13px; font-weight: 600; color: var(--brand-magenta); text-transform: uppercase; letter-spacing: 1px; }
+
+        .card { background: #ffffff; border-radius: 16px; padding: 24px 20px; margin-bottom: 20px; border: 1px solid var(--card-border); box-shadow: 0 4px 15px rgba(241, 152, 33, 0.06); }
+        .hero-card { text-align: center; background: linear-gradient(135deg, #ffffff 0%, var(--brand-cream) 100%); border: 2px solid var(--brand-primary); }
+        .hero-title { color: var(--brand-magenta); font-size: 24px; font-weight: 800; line-height: 1.25; margin-bottom: 12px; text-transform: uppercase; }
+        .hero-subtitle { font-size: 15px; color: #555; margin-bottom: 18px; font-weight: 500; }
+        .hero-author { font-size: 16px; font-weight: bold; color: var(--brand-primary); }
+        .hero-credentials { font-size: 13px; color: #666; margin-top: 2px; }
+
+        .nav-sticky { position: sticky; top: 10px; z-index: 99; background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(8px); padding: 10px; border-radius: 30px; margin-bottom: 20px; border: 1px solid var(--brand-primary); box-shadow: 0 4px 12px rgba(0,0,0,0.08); display: flex; overflow-x: auto; gap: 8px; scrollbar-width: none; }
+        .nav-sticky::-webkit-scrollbar { display: none; }
+        .nav-item { white-space: nowrap; padding: 6px 14px; font-size: 12px; font-weight: bold; border-radius: 20px; color: var(--brand-primary); background: #fff; border: 1px solid var(--brand-primary); text-decoration: none; transition: all 0.2s ease; }
+        .nav-item:active { background: var(--brand-primary); color: #fff; }
+
+        h2 { color: var(--brand-primary); font-size: 20px; font-weight: 700; margin-bottom: 12px; border-left: 4px solid var(--brand-magenta); padding-left: 10px; line-height: 1.3; }
+        h3 { color: var(--brand-magenta); font-size: 16px; font-weight: 700; margin: 16px 0 8px; }
+        p { margin-bottom: 12px; font-size: 15px; color: #333; text-align: justify; }
+
+        .intro-quote { font-style: italic; background-color: var(--brand-cream); padding: 16px; border-radius: 12px; border-left: 4px solid var(--brand-pink); margin-bottom: 15px; color: #444; }
+
+        .box-safety { background: #fff0f3; border: 2px solid var(--brand-pink); border-left: 6px solid var(--brand-magenta); padding: 18px; border-radius: 12px; margin: 20px 0; }
+        .box-safety h3 { color: var(--brand-magenta); margin-top: 0; font-size: 18px; text-align: center; }
+
+        .box-highlight { background-color: #fff9f0; border-left: 4px solid var(--brand-yellow); padding: 14px; border-radius: 8px; margin: 15px 0; font-size: 14.5px; }
+
+        .checklist-group { margin: 15px 0; }
+        .chk-item { display: flex; align-items: flex-start; gap: 12px; background: #fafafa; border: 1px solid #eee; padding: 12px 14px; border-radius: 10px; margin-bottom: 8px; cursor: pointer; user-select: none; transition: background 0.15s ease; }
+        .chk-item:active { background: #f0f0f0; }
+        .chk-item input[type="checkbox"] { width: 20px; height: 20px; accent-color: var(--brand-magenta); margin-top: 2px; flex-shrink: 0; cursor: pointer; }
+        .chk-item label { font-size: 14.5px; color: #222; cursor: pointer; flex-grow: 1; line-height: 1.4; }
+
+        .tally-box { background: linear-gradient(135deg, var(--brand-primary) 0%, var(--brand-magenta) 100%); color: white; padding: 16px; border-radius: 12px; text-align: center; margin-top: 15px; font-weight: bold; font-size: 15px; display: none; }
+
+        .journal-table { width: 100%; border-collapse: collapse; margin: 15px 0; font-size: 13px; }
+        .journal-table th { background: var(--brand-primary); color: white; padding: 8px; text-align: left; }
+        .journal-table td { border: 1px solid #e0e0e0; padding: 6px; background: #fff; }
+        .journal-table input { width: 100%; border: none; padding: 4px; font-size: 13px; outline: none; }
+
+        .btn { display: block; width: 100%; padding: 14px; border-radius: 30px; text-align: center; font-weight: bold; font-size: 15px; text-decoration: none; margin-bottom: 10px; border: none; cursor: pointer; box-shadow: 0 4px 10px rgba(0,0,0,0.08); transition: transform 0.1s ease; }
+        .btn:active { transform: scale(0.98); }
+        .btn-primary { background: var(--brand-primary); color: white; }
+        .btn-magenta { background: var(--brand-magenta); color: white; }
+        .btn-outline { background: transparent; color: var(--brand-primary); border: 2px solid var(--brand-primary); }
+
+        .floating-cta { position: fixed; bottom: 0; left: 0; right: 0; background: rgba(255,255,255,0.95); backdrop-filter: blur(10px); padding: 12px 16px; border-top: 1px solid var(--card-border); box-shadow: 0 -4px 15px rgba(0,0,0,0.08); display: flex; gap: 10px; justify-content: center; max-width: 720px; margin: 0 auto; z-index: 100; }
+        .floating-cta .btn { margin-bottom: 0; flex: 1; font-size: 13.5px; padding: 12px 8px; }
+
+        .sources-list { font-size: 12.5px; color: #666; line-height: 1.5; padding-left: 18px; margin-top: 10px; }
+        .sources-list li { margin-bottom: 8px; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <div class="brand-badge-header">
+        <div class="brand-logo-text">Annelisa Brunelli</div>
+        <div class="brand-tagline">OssitocinaLibera</div>
+    </div>
+
+    <!-- HERO CARD -->
+    <div class="card hero-card">
+        <div class="hero-title">IL MIO BAMBINO / LA MIA BAMBINA PIANGE TANTO.<br>DA DOVE COMINCIO?</div>
+        <div class="hero-subtitle">Una guida pratica per osservare, capire e riconoscere quando vale la pena approfondire</div>
+        <div style="border-top: 1px solid var(--brand-pink); margin: 15px 0 10px;"></div>
+        <div class="hero-author">Annelisa Brunelli</div>
+        <div class="hero-credentials">IBCLC · Puericultrice · Educatrice Perinatale MIPA · OssitocinaLibera</div>
+    </div>
+
+    <!-- BOX SICUREZZA E DISCLAIMER -->
+    <div class="box-safety">
+        <h3>➕ Prima di iniziare a osservare: La Sicurezza</h3>
+        <p style="text-align: center; font-weight: bold; margin-bottom: 10px; color: #b00050;">
+            Questa guida non sostituisce il parere medico né una consulenza professionale individuale in allattamento IBCLC.
+        </p>
+        <p style="font-size: 14px; margin-bottom: 8px;">Contatta tempestivamente il pediatra in caso di:</p>
+        <ul style="font-size: 13.5px; padding-left: 20px; margin-bottom: 10px;">
+            <li>Febbre ≥ 38 °C (nei primi 3 mesi)</li>
+            <li>Difficoltà respiratorie, marcata sonnolenza o difficoltà a svegliarsi</li>
+            <li>Rifiuto persistente dell'alimentazione o segni di disidratazione</li>
+            <li>Vomito anomalo o sangue (nelle feci o nel vomito)</li>
+        </ul>
+        <p style="text-align: center; font-size: 12.5px; font-style: italic; margin-bottom: 0; color: #666;">
+            La checklist di osservazione viene sempre dopo la sicurezza clinica.
+        </p>
+    </div>
+
+    <!-- NAVIGAZIONE RAPIDA -->
+    <div class="nav-sticky">
+        <a href="#intro" class="nav-item">Intro</a>
+        <a href="#poppata" class="nav-item">1. Poppata</a>
+        <a href="#comportamento" class="nav-item">2&3. Comportamento & Intestino</a>
+        <a href="#cause" class="nav-item">4&5. Cause & Frenulo</a>
+        <a href="#goccine" class="nav-item">7&8. Goccine & Reflusso</a>
+        <a href="#osteopatia" class="nav-item">11. Osteopatia</a>
+        <a href="#ibclc" class="nav-item">12. IBCLC</a>
+        <a href="#diario" class="nav-item">Diario</a>
+        <a href="#contatti" class="nav-item">Contatti</a>
+    </div>
+
+    <!-- INTRO -->
+    <div class="card" id="intro">
+        <h2>Prima di cominciare</h2>
+        <div class="intro-quote">
+            "Sono coliche. Passeranno." Forse sì. Ma quando un bambino/a piange molto, questa risposta non ci dice necessariamente perché sta succedendo. E soprattutto non ti aiuta a capire se c'è qualcosa che vale la pena osservare meglio. Il pianto può essere influenzato da molti fattori e non sempre esiste una sola spiegazione. Questa guida non serve quindi a trovare una diagnosi. Serve a fare qualcosa di più utile: imparare a osservare. Perché quando sai cosa guardare puoi riconoscere meglio i segnali, raccogliere informazioni utili e capire quale area potrebbe meritare un approfondimento. 🤍
+        </div>
+
+        <h2>1. "Coliche": cosa è cambiato?</h2>
+        <p>Per anni abbiamo utilizzato la parola coliche per descrivere bambini/e che piangevano molto, spesso senza una causa evidente. Oggi il linguaggio è cambiato. Con i nuovi criteri Rome V, il termine <em>infantile colic</em> è stato sostituito da <strong>Infant Distress Syndrome (IDS), Sindrome di Distress del Lattante</strong>.</p>
+        <div class="box-highlight">
+            <strong>Perché questo cambiamento conta?</strong><br>
+            Perché la parola "coliche" porta facilmente a pensare: <em>piange è la pancia</em>. Ma non è necessariamente così. Il distress descrive ciò che osserviamo; non ci dice automaticamente perché sta succedendo. Ed è proprio per questo che vale la pena osservare il bambino/a nel suo insieme.
+        </div>
+        <p style="font-size: 13.5px; color: #555;"><strong>I numeri:</strong> 1 bambino/a su 5 attraversa periodi di pianto prolungato; picco a 6 settimane; 90% di risoluzione entro i 4 mesi.</p>
+    </div>
+
+    <!-- SEZIONE 1: LA POPPATA -->
+    <div class="card" id="poppata">
+        <h2>2. La prima cosa da osservare: come sta mangiando?</h2>
+        <p>Quando un bambino/a piange molto, una delle prime cose da osservare è come avviene l'alimentazione (al seno, al biberon o entrambi). Una poppata frequente non significa necessariamente che ci sia un problema, ma può essere faticosa o poco efficace.</p>
+
+        <h3>L'Attacco</h3>
+        <div class="checklist-group">
+            <div class="chk-item"><input type="checkbox" id="p1" onchange="updateSummary()"><label for="p1">Fa fatica ad attaccarsi o scivola via continuamente?</label></div>
+            <div class="chk-item"><input type="checkbox" id="p2" onchange="updateSummary()"><label for="p2">L'attacco risulta superficiale o non "a pesciolino" (bocca chiusa o stretta)?</label></div>
+            <div class="chk-item"><input type="checkbox" id="p3" onchange="updateSummary()"><label for="p3">Al seno ho dolore durante o dopo l'attacco?</label></div>
+            <div class="chk-item"><input type="checkbox" id="p4" onchange="updateSummary()"><label for="p4">Il capezzolo esce deformato, schiacciato o molto sbiancato?</label></div>
+        </div>
+
+        <h3>Durante la Suzione</h3>
+        <div class="checklist-group">
+            <div class="chk-item"><input type="checkbox" id="p5" onchange="updateSummary()"><label for="p5">Si stacca frequentemente dal seno o dal biberon?</label></div>
+            <div class="chk-item"><input type="checkbox" id="p6" onchange="updateSummary()"><label for="p6">Sento schiocchi durante la suzione?</label></div>
+            <div class="chk-item"><input type="checkbox" id="p7" onchange="updateSummary()"><label for="p7">Sembra perdere spesso il sigillo o la presa?</label></div>
+            <div class="chk-item"><input type="checkbox" id="p8" onchange="updateSummary()"><label for="p8">Si agita o si irrigidisce durante la poppata al seno o al biberon?</label></div>
+            <div class="chk-item"><input type="checkbox" id="p9" onchange="updateSummary()"><label for="p9">Sembra fare molta fatica a mangiare o si stanca molto rapidamente?</label></div>
+            <div class="chk-item"><input type="checkbox" id="p10" onchange="updateSummary()"><label for="p10">Le poppate sono quasi sempre molto lunghe (> 45-60 minuti)?</label></div>
+            <div class="chk-item"><input type="checkbox" id="p10b" onchange="updateSummary()"><label for="p10b">Le poppate sono molto brevi e frammentate?</label></div>
+            <div class="chk-item"><input type="checkbox" id="p11" onchange="updateSummary()"><label for="p11">Al biberon tossisce, si strozza o fatica a gestire il flusso?</label></div>
+        </div>
+
+        <h3>3. Cosa succede dopo aver mangiato?</h3>
+        <div class="checklist-group">
+            <div class="chk-item"><input type="checkbox" id="p12" onchange="updateSummary()"><label for="p12">Piange spesso subito dopo aver mangiato?</label></div>
+            <div class="chk-item"><input type="checkbox" id="p13" onchange="updateSummary()"><label for="p13">Si agita, si irrigidisce o si inarca frequentemente?</label></div>
+            <div class="chk-item"><input type="checkbox" id="p14" onchange="updateSummary()"><label for="p14">Cerca immediatamente di mangiare di nuovo ma sembra raramente soddisfatto/a?</label></div>
+            <div class="chk-item"><input type="checkbox" id="p15" onchange="updateSummary()"><label for="p15">Si calma soltanto al seno o solo in posizione verticale/a contatto?</label></div>
+            <div class="chk-item"><input type="checkbox" id="p16" onchange="updateSummary()"><label for="p16">Rigurgita frequentemente e dopo sembra stare male?</label></div>
+        </div>
+
+        <div class="box-highlight">
+            <strong>SE HAI MESSO MOLTE SPUNTE ✓:</strong><br>
+            Potrebbe essere utile approfondire come sta avvenendo l'alimentazione. Non significa automaticamente che ci sia un problema, ma che osservare una poppata reale può dare informazioni preziose.
+        </div>
+    </div>
+
+    <!-- SEZIONE 2 & 3: COMPORTAMENTO & INTESTINO -->
+    <div class="card" id="comportamento">
+        <h2>4. Il Pianto: quando succede?</h2>
+        <p>Non guardare soltanto quanto piange il bambino/a. Guarda <em>quando</em>.</p>
+        <div class="checklist-group">
+            <div class="chk-item"><input type="checkbox" id="c1" onchange="updateSummary()"><label for="c1">Piange soprattutto la sera o in orario tardo pomeridiano?</label></div>
+            <div class="chk-item"><input type="checkbox" id="c2" onchange="updateSummary()"><label for="c2">Il pianto compare durante la poppata o subito dopo?</label></div>
+            <div class="chk-item"><input type="checkbox" id="c3" onchange="updateSummary()"><label for="c3">È molto difficile da consolare e ha pochi momenti di vera tranquillità?</label></div>
+            <div class="chk-item"><input type="checkbox" id="c4" onchange="updateSummary()"><label for="c4">Si calma prevalentemente con il contatto, il movimento o al seno?</label></div>
+            <div class="chk-item"><input type="checkbox" id="c5" onchange="updateSummary()"><label for="c5">Le gambe vengono tirate alla pancia e la schiena si inarca?</label></div>
+        </div>
+
+        <h2>5. Intestino, Aria e Feci</h2>
+        <p>Quando un bambino/a ha molta aria è facile pensare che il problema sia solo la pancia. Ma l'aria è un'informazione, non necessariamente la spiegazione.</p>
+        <div class="checklist-group">
+            <div class="chk-item"><input type="checkbox" id="i1" onchange="updateSummary()"><label for="i1">Sembra ingoiare molta aria e l'intestino appare spesso teso e disteso?</label></div>
+            <div class="chk-item"><input type="checkbox" id="i2" onchange="updateSummary()"><label for="i2">Le feci sono cambiate in modo persistente (liquide, verdi schiumose, con muco)?</label></div>
+            <div class="chk-item"><input type="checkbox" id="i3" onchange="updateSummary()"><label for="i3">Hai visto tracce ematiche nelle feci?</label></div>
+            <div class="chk-item"><input type="checkbox" id="i4" onchange="updateSummary()"><label for="i4">Sente sollievo temporaneo dopo l'emissione di gas o l'evacuazione?</label></div>
+        </div>
+
+        <h2>6. Crescita e Alimentazione</h2>
+        <div class="checklist-group">
+            <div class="chk-item"><input type="checkbox" id="cr1" onchange="updateSummary()"><label for="cr1">Ho dubbi sulla crescita o sulla quantità di latte assunta dal bambino/a?</label></div>
+            <div class="chk-item"><input type="checkbox" id="cr2" onchange="updateSummary()"><label for="cr2">Bagna almeno 5-6 pannolini di pipì nelle 24 ore?</label></div>
+            <div class="chk-item"><input type="checkbox" id="cr2b" onchange="updateSummary()"><label for="cr2b">Sporca almeno 1-3 pannolini nelle 24 ore?</label></div>
+            <div class="chk-item"><input type="checkbox" id="cr3" onchange="updateSummary()"><label for="cr3">Sto pensando di interrompere l'allattamento perché la situazione è difficile?</label></div>
+        </div>
+
+        <div class="box-highlight">
+            <strong>SE HAI MESSO MOLTE SPUNTE ✓:</strong><br>
+            Può essere utile valutare alimentazione, comportamento e sintomi gastrointestinali insieme, senza dare per scontato che la causa sia soltanto l'intestino.
+        </div>
+    </div>
+
+    <!-- SEZIONE 4 & 5: CAUSE DA ESPLORARE & FRENULO -->
+    <div class="card" id="cause">
+        <h2>7. Bocca, Suzione e Frenulo Linguale</h2>
+        <p>La domanda più utile non è solo "ha il frenulo corto?", ma: <em>"La struttura e il movimento della bocca stanno interferendo con la funzione durante l'alimentazione?"</em></p>
+        
+        <h3>Checklist Funzionale Frenulo</h3>
+        <div class="checklist-group">
+            <div class="chk-item"><input type="checkbox" id="f1" onchange="updateSummary()"><label for="f1">Fa fatica a mantenere il seno o la tettarella in bocca?</label></div>
+            <div class="chk-item"><input type="checkbox" id="f2" onchange="updateSummary()"><label for="f2">Perde frequentemente il sigillo e si sentono schiocchi?</label></div>
+            <div class="chk-item"><input type="checkbox" id="f3" onchange="updateSummary()"><label for="f3">La suzione sembra poco efficace e il bambino/a si stanca rapidamente o si addormenta subito?</label></div>
+            <div class="chk-item"><input type="checkbox" id="f4" onchange="updateSummary()"><label for="f4">L'attacco rimane difficile e la mamma ha dolore persistente o capezzolo deformato?</label></div>
+            <div class="chk-item"><input type="checkbox" id="f5" onchange="updateSummary()"><label for="f5">Ti è stata consigliata una valutazione della lingua o del frenulo?</label></div>
+        </div>
+
+        <h2>Altre Cause da Esplorare</h2>
+        <p><strong>Microbioma Intestinale:</strong> Fattori come antibiotici, parto cesareo o allattamento misto possono influenzare la flora intestinale.</p>
+        <p><strong>Sistema Nervoso in Costruzione:</strong> Il pianto serale è spesso uno scarico neurosensoriale da sovraccarico di stimoli ambientali.</p>
+        <p><strong>Dieta Materna:</strong> Le eliminazioni 'alla cieca' senza sospetto clinico (es. APLV con sangue nelle feci o eczema) sono spesso inutili e faticose.</p>
+    </div>
+
+    <!-- SEZIONE 7 & 8: GOCCINE & REFLUSSO -->
+    <div class="card" id="goccine">
+        <h2>10. E le Goccine?</h2>
+        <p>Quando il bambino/a piange, è del tutto naturale voler trovare un rimedio immediato. Prodotti come il <strong>simeticone</strong> vengono spesso proposti quasi in automatico: la letteratura scientifica evidenzia che il simeticone agisce favorendo l'aggregazione delle bolle d'aria nell'intestino per facilitarne l'espulsione, ma ha un'incidenza limitata sulla riduzione complessiva del pianto poiché interviene solo sul sintomo e non sulla causa primaria che genera l'ingestione d'aria (come un difetto d'attacco o di gestione del flusso).</p>
+        <p>Per quanto riguarda i <strong>probiotici</strong> (ad esempio ceppi specifici studiati nella ricerca scientifica come <em>Lactobacillus reuteri</em>), l'eventuale supporto va sempre valutato e concordato con il medico/pediatra. La ricerca dimostra che l'efficacia dipende fortemente dalla scelta del ceppo adeguato e dalle caratteristiche individuali del lattante. Ricorda: l'obiettivo non è accumulare tentativi di prodotti diversi, ma comprendere cosa si sta cercando di migliorare e valutare la situazione nel suo insieme.</p>
+
+        <h2>8. Rigurgito: non significa automaticamente Reflusso</h2>
+        <p>Il rigurgito è comune nei lattanti. Occorre distinguere tra rigurgito fisiologico (bambino/a sereno che cresce) e patologia da reflusso gastroesofageo (GERD con dolore, rifiuto del cibo, inarcamento e voce rauca).</p>
+    </div>
+
+    <!-- SEZIONE 11: OSTEOPATIA -->
+    <div class="card" id="osteopatia">
+        <h2>11. E l'Osteopatia?</h2>
+        <p>L'osteopatia pediatrica può essere un valido aiuto di supporto per eliminare tensioni date sia da un attacco superficiale e una restrizione orale, o per le conseguenze di un parto operativo, o comunque per distendere le tensioni presenti nel corpo del bambino/a. Può essere un supporto molto valido da valutare nel caso in cui il tuo bimbo/a soffra di coliche o distress. Ovviamente è fondamentale lavorare in team (osteopata, pediatra, IBCLC) per valutare a fondo tutta la situazione.</p>
+    </div>
+
+    <!-- TALLY BOX / RIEPILOGO INTERATTIVO -->
+    <div id="tally-summary" class="tally-box">
+        Hai selezionato <span id="checked-count">0</span> segnali.
+        <div id="tally-advice" style="font-weight: normal; font-size: 13.5px; margin-top: 6px;"></div>
+    </div>
+
+    <!-- SEZIONE 12: IBCLC -->
+    <div class="card" id="ibclc">
+        <h2>12. COSA TI RACCONTA LA TUA CHECKLIST?</h2>
+        <p>Se hai messo diverse spunte in una o più sezioni, potrebbe essere utile approfondire come sta funzionando l'alimentazione del tuo bambino/a (sia al seno che al biberon).</p>
+        
+        <p>Una valutazione IBCLC permette di osservare ciò che una checklist non può vedere: come mangia realmente il bambino/a. Attacco, suzione, deglutizione, coordinazione, gestione del flusso e trasferimento di latte.</p>
+
+        <div class="box-highlight" style="text-align: center; font-style: italic;">
+            "Una consulenza IBCLC non inizia dalla bocca del bambino/a, inizia dalla vostra storia."
+        </div>
+    </div>
+
+    <!-- DIARIO DI OSSERVAZIONE -->
+    <div class="card" id="diario">
+        <h2>Bonus: Osservalo/a per 3 Giorni</h2>
+        <p>Non serve un diario perfetto. 3 giorni sono sufficienti per individuare i pattern. Se compilare il diario ti aumenta l'ansia, fermati senza sensi di colpa.</p>
+
+        <div style="overflow-x: auto;">
+            <table class="journal-table">
+                <thead>
+                    <tr>
+                        <th>Ora</th>
+                        <th>Poppata</th>
+                        <th>Durante</th>
+                        <th>Dopo / Pianto</th>
+                        <th>Pannolino / Note</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><input type="text" placeholder="08:00"></td>
+                        <td><input type="text" placeholder="Seno D"></td>
+                        <td><input type="text" placeholder="Tranquillo"></td>
+                        <td><input type="text" placeholder="Rilassato"></td>
+                        <td><input type="text" placeholder="Pipì ok"></td>
+                    </tr>
+                    <tr>
+                        <td><input type="text" placeholder="11:30"></td>
+                        <td><input type="text" placeholder="Bib 90ml"></td>
+                        <td><input type="text" placeholder="Agitato"></td>
+                        <td><input type="text" placeholder="Pianto 20m"></td>
+                        <td><input type="text" placeholder="Feci senape"></td>
+                    </tr>
+                    <tr>
+                        <td><input type="text" placeholder=""></td>
+                        <td><input type="text" placeholder=""></td>
+                        <td><input type="text" placeholder=""></td>
+                        <td><input type="text" placeholder=""></td>
+                        <td><input type="text" placeholder=""></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- SEZIONE CONTATTI E LINK -->
+    <div class="card" id="contatti" style="text-align: center; border: 2px solid var(--brand-primary); background: var(--brand-cream);">
+        <h2 style="border-left: none; padding-left: 0;">Come posso aiutarti?</h2>
+        <p style="text-align: center; font-weight: 500;">Se ti sei riconosciuta in diverse spunte e vuoi fermarti a osservare la vostra situazione insieme:</p>
+        
+        <a href="https://tidycal.com/ossitocinalibera" target="_blank" class="btn btn-primary">Prenota una consulenza</a>
+        <a href="https://msha.ke/ossitocinalibera" target="_blank" class="btn btn-magenta">Scopri i miei servizi</a>
+        <a href="https://instagram.com/ossitocinalibera" target="_blank" class="btn btn-outline">Seguimi su Instagram (@ossitocinalibera)</a>
+    </div>
+
+    <!-- BIBLIOGRAFIA / FONTI -->
+    <div class="card">
+        <h2>FONTI & Bibliografia</h2>
+        <ul class="sources-list">
+            <li><strong>Di Lorenzo C, Saps M, Chumpitazi BP, et al.</strong> Lower and Biliary Disorders of Gut-Brain Interaction: Child and Adolescent. <em>Gastroenterology. 2026.</em> (Rome V introduce il termine Infant Distress Syndrome in sostituzione di infantile colic).</li>
+            <li><strong>LeFort Y, Evans A, Livingstone V, et al.</strong> Academy of Breastfeeding Medicine Position Statement on Ankyloglossia in Breastfeeding Dyads. <em>Breastfeeding Medicine. 2021.</em> (La valutazione del frenulo deve considerare la funzione durante l'allattamento, non soltanto l'aspetto anatomico).</li>
+            <li><strong>Rosen R, et al.</strong> Pediatric Gastroesophageal Reflux Clinical Practice Guidelines. <em>NASPGHAN/ESPGHAN.</em> (Per il reflusso è importante una valutazione clinica complessiva e la ricerca dei segnali d'allarme).</li>
+            <li><strong>Vandenplas Y, et al.</strong> An ESPGHAN Position Paper on the Diagnosis, Management, and Prevention of Cow's Milk Allergy. <em>2024.</em></li>
+            <li><strong>Letteratura sulle terapie manuali/osteopatia nel distress del lattante.</strong> Le evidenze disponibili suggeriscono possibili benefici in alcuni studi, ma rimangono eterogenee e non sufficienti per considerare l'osteopatia un trattamento certo del distress/coliche.</li>
+        </ul>
+    </div>
+
+</div>
+
+<!-- FLOATING BOTTOM CTA -->
+<div class="floating-cta">
+    <a href="https://tidycal.com/ossitocinalibera" target="_blank" class="btn btn-primary">Prenota Consulenza</a>
+    <a href="https://msha.ke/ossitocinalibera" target="_blank" class="btn btn-magenta">I miei Servizi</a>
+</div>
+
+<script>
+    function updateSummary() {
+        const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+        let count = 0;
+        checkboxes.forEach(chk => { if (chk.checked) count++; });
+
+        const tallyBox = document.getElementById('tally-summary');
+        const countSpan = document.getElementById('checked-count');
+        const adviceDiv = document.getElementById('tally-advice');
+
+        countSpan.textContent = count;
+
+        if (count > 0) {
+            tallyBox.style.display = 'block';
+            if (count >= 5) {
+                adviceDiv.textContent = "Hai selezionato diverse spunte. Potrebbe essere un momento utile per osservare la poppata e l'alimentazione del tuo bambino/a insieme a un professionista.";
+            } else {
+                adviceDiv.textContent = "Continua a osservare i segnali nei prossimi giorni per individuare eventuali pattern ricorrenti.";
+            }
+        } else {
+            tallyBox.style.display = 'none';
+        }
+    }
+</script>
+
+</body>
+</html>
