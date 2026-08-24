@@ -267,7 +267,7 @@
         <p>L'approccio osteopatico è quindi un tassello di fondamentale rilevanza da valutare nel percorso del tuo bimbo/a per distendere le tensioni e restituire comfort corporeo. Per garantire la massima efficacia e sicurezza, è indispensabile lavorare in un <strong>team multidisciplinare integrato (Osteopata pediatrico, Pediatra e IBCLC)</strong>, in modo da valutare l'intero quadro clinico e funzionale a 360°.</p>
     </div>
 
-    <!-- TALLY BOX / RIEPILOGO INTERATTIVO DETTAGLIATO PER SEZIONE -->
+    <!-- TALLY BOX / RIEPILOGO INTERATTIVO DETTAGLIATO PER SEZIONE CON BOTTONE SERVIZI -->
     <div id="tally-summary" class="tally-box">
         <div class="tally-header">📊 Il Riepilogo delle tue osservazioni</div>
         <ul class="tally-list">
@@ -281,7 +281,11 @@
         <div class="tally-total">
             Totale segnali evidenziati: <span id="checked-count">0</span>
         </div>
-        <div id="tally-advice" style="font-weight: normal; font-size: 13.5px; margin-top: 10px; text-align: center; color: #444;"></div>
+        <div id="tally-advice" style="font-weight: normal; font-size: 14px; margin-top: 12px; text-align: center; color: #333; line-height: 1.5;"></div>
+        
+        <div style="margin-top: 16px;">
+            <a href="https://msha.ke/ossitocinalibera" target="_blank" class="btn btn-magenta" style="margin-bottom: 0;">Scopri i miei servizi e le consulenze</a>
+        </div>
     </div>
 
     <!-- SEZIONE CONCLUSIVA: UN PASSO ALLA VOLTA -->
@@ -289,7 +293,7 @@
         <h2>Un passo alla volta: come usare al meglio questa guida</h2>
         <p>Questa checklist nasce per offrirti una mappa semplice e concreta: un modo chiaro per monitorare i segnali da tenere in considerazione ed essere consapevole di eventuali difficoltà.</p>
         <p>Tuttavia, gli aspetti da valutare e le informazioni in gioco sono davvero tanti. Quando ci si trova nel mezzo di pianti prolungati, unire tutti i puntini da soli può diventare faticoso e schiacciante.</p>
-        <p><strong>Non devi fare tutto da sola.</strong> Rivolgetevi alla vostra IBCLC di fiducia per una consulenza approfondita: osservare l'alimentazione dal vivo e analizzare la vostra storia insieme è la strada più diretta per capire cosa stia davvero succedendo, fare chiarezza e ritrovare la serenità.</p>
+        <p><strong>Non devi fare tutto da sola.</strong> Rivolgetevi alla vostra IBCLC di fiducia per una consulenza approfondita: osservare l'alimentazione dal vivo o in una consulenza online e analizzare la vostra storia insieme è la strada più diretta per capire cosa stia davvero succedendo, fare chiarezza e ritrovare la serenità.</p>
     </div>
 
     <!-- SEZIONE 12: IBCLC -->
@@ -418,11 +422,11 @@
             // Messaggio dinamico
             const adviceDiv = document.getElementById('tally-advice');
             if (counts.poppata > 1 || counts.frenulo > 1) {
-                adviceDiv.textContent = "Notiamo diversi segnali concentrati nell'area della poppata e della suzione: una valutazione dal vivo dell'alimentazione con una IBCLC potrebbe dare risposte molto chiare.";
+                adviceDiv.innerHTML = "Hai evidenziato diversi segnali concentrati nell'area della <strong>poppata e della suzione</strong>. Una consulenza professionale in allattamento — <strong>sia in presenza che online</strong> — con una specialista IBCLC può darti risposte molto più chiare e risolutive sulla situazione che state vivendo.";
             } else if (counts.pancia > 1) {
-                adviceDiv.textContent = "Le tue spunte indicano affaticamento a livello digestivo/addominale: valutare insieme la gestione dell'aria durante il pasto e la risposta post-poppata può essere d'aiuto.";
+                adviceDiv.innerHTML = "Le tue spunte indicano affaticamento a livello digestivo/addominale. Valutare insieme la gestione dell'aria durante il pasto e la risposta post-poppata (anche in una consulenza online o in presenza) può fare una grande differenza.";
             } else {
-                adviceDiv.textContent = "I segnali raccolti sono un ottimo punto di partenza per osservare i pattern nei prossimi giorni ed parlarne con il tuo professionista di riferimento.";
+                adviceDiv.innerHTML = "I segnali raccolti sono un ottimo punto di partenza per osservare i pattern nei prossimi giorni e affrontarli con il tuo professionista di riferimento.";
             }
         } else {
             tallyBox.style.display = 'none';
